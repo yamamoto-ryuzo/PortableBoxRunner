@@ -1,0 +1,12 @@
+box:
+  client_id: "xxxxxxxx"
+  client_secret: "xxxxxxxx"
+  folder_id: "1234567890"
+local:
+  sync_dir: "C:/PortableApps/MyApp"
+  exe_name: "MyApp.exe"
+sync:
+  interval_min: 60
+  delete_orphan: false
+log:
+  file: "runner.log"

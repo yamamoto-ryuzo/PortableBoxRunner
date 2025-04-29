@@ -1,4 +1,4 @@
-# PortableBoxRunner 仕様書
+# PortableBoxRunner 仕様書（作成中。。。。）
 
 ---
 
