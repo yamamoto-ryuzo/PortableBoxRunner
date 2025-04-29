@@ -52,15 +52,15 @@
 ---
 
 ## 3. 動作フロー
-flowchart TD
-A[起動] --> B[設定ファイル読込]
-B --> C[Box認証・接続]
-C --> D[Boxフォルダ内ファイル一覧取得]
-D --> E[ローカルと差分比較]
-E --> F[差分ファイルのみダウンロード]
-F --> G[指定アプリを起動]
-G --> H[ログ記録]
-H --> I{終了 or 定期再実行}
+flowchart TD  
+A[起動] --> B[設定ファイル読込]  
+B --> C[Box認証・接続]  
+C --> D[Boxフォルダ内ファイル一覧取得]  
+D --> E[ローカルと差分比較]  
+E --> F[差分ファイルのみダウンロード]  
+F --> G[指定アプリを起動]  
+G --> H[ログ記録]    
+H --> I{終了 or 定期再実行}  
 
 
 ---
@@ -108,18 +108,18 @@ H --> I{終了 or 定期再実行}
 
 ## 9. サンプル設定ファイル（YAML）
 
-box:
-client_id: "xxxxxxxx"
-client_secret: "xxxxxxxx"
-folder_id: "1234567890"
-local:
-sync_dir: "C:/PortableApps/MyApp"
-exe_name: "MyApp.exe"
-sync:
-interval_min: 60
-delete_orphan: false
-log:
-file: "runner.log"
+box:  
+client_id: "xxxxxxxx"  
+client_secret: "xxxxxxxx"  
+folder_id: "1234567890"  
+local:  
+sync_dir: "C:/PortableApps/MyApp"  
+exe_name: "MyApp.exe"  
+sync:  
+interval_min: 60  
+delete_orphan: false  
+log:  
+file: "runner.log"  
 
 ---
 
