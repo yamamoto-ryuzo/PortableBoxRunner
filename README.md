@@ -52,4 +52,83 @@
 ---
 
 ## 3. 動作フロー
+flowchart TD
+A[起動] --> B[設定ファイル読込]
+B --> C[Box認証・接続]
+C --> D[Boxフォルダ内ファイル一覧取得]
+D --> E[ローカルと差分比較]
+E --> F[差分ファイルのみダウンロード]
+F --> G[指定アプリを起動]
+G --> H[ログ記録]
+H --> I{終了 or 定期再実行}
+
+
+---
+
+## 4. 画面・UI仕様
+
+- 基本はCUI（コマンドライン）で動作
+- オプションで簡易GUI（進捗バー・エラーダイアログ）も実装可能
+- 設定ファイルのパスや同期間隔等はコマンドライン引数で指定可能
+
+---
+
+## 5. セキュリティ・運用
+
+- Box APIの認証情報は安全に暗号化管理
+- ダウンロードファイルのウイルスチェック（オプション）
+- ログイン情報や個人データは保存しない
+
+---
+
+## 6. 想定ユースケース
+
+- 企業内での業務用ポータブルツール配布
+- 教育機関での教材アプリ自動配布
+- バージョン管理が必要な現場向けツールの展開
+
+---
+
+## 7. 拡張性・今後の展望
+
+- Mac/Linux対応
+- Box以外のクラウドストレージ（OneDrive, Google Drive等）への対応
+- 自動アップデート機能の追加
+- 詳細な同期設定（除外ファイル指定等）
+
+---
+
+## 8. 参考情報
+
+- Box API（[box-python-sdk](https://github.com/box/box-python-sdk)）
+- Python3.8以上
+- Windows 10/11
+
+---
+
+## 9. サンプル設定ファイル（YAML）
+
+box:
+client_id: "xxxxxxxx"
+client_secret: "xxxxxxxx"
+folder_id: "1234567890"
+local:
+sync_dir: "C:/PortableApps/MyApp"
+exe_name: "MyApp.exe"
+sync:
+interval_min: 60
+delete_orphan: false
+log:
+file: "runner.log"
+
+---
+
+## 10. ライセンス・配布
+
+- MITライセンス（予定）
+- 配布形態：Pythonスクリプト／EXEパッケージ（PyInstaller等利用）
+
+---
+
+**PortableBox Runner**は、Box共有フォルダとローカルPC間の安全・確実なポータブルアプリ自動配布・起動を実現します。
 
